@@ -1,3 +1,5 @@
+#!/bin/sh
+# -*- coding: utf-8 -*-
 """Module which handles the follow features like unfollowing and following"""
 import json
 from time import sleep

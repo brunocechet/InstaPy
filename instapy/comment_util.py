@@ -1,3 +1,6 @@
+#!/bin/sh
+# -*- coding: utf-8 -*-
+
 """Module which handles the commenting features"""
 from random import choice
 from time import sleep
@@ -7,7 +10,7 @@ def comment_image(browser, comments):
   rand_comment = (choice(comments))
 
   comment_input = browser.find_element_by_xpath\
-    ('//input[@placeholder = "Add a comment…"]')
+    ('//input[@placeholder = "Adicione um comentário…"]')
   comment_input.send_keys(rand_comment)
   comment_input.submit()
 

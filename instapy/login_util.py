@@ -1,3 +1,5 @@
+#!/bin/sh
+# -*- coding: utf-8 -*-
 """Module only used for the login part of the script"""
 from time import sleep
 from selenium.common.exceptions import NoSuchElementException

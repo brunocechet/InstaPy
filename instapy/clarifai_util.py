@@ -1,3 +1,5 @@
+#!/bin/sh
+# -*- coding: utf-8 -*-
 """Module which handles the clarifai api and checks
 the image for invalid content"""
 from clarifai.client import ClarifaiApi

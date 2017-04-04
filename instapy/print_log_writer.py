@@ -1,3 +1,5 @@
+#!/bin/sh
+# -*- coding: utf-8 -*-
 """Module only used to log the number of followers to a file"""
 from datetime import datetime
 

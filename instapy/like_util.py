@@ -1,3 +1,5 @@
+#!/bin/sh
+# -*- coding: utf-8 -*-
 """Module that handles the like features"""
 from math import ceil
 from time import sleep

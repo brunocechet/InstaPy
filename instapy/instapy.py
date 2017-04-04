@@ -1,3 +1,5 @@
+#!/bin/sh
+# -*- coding: utf-8 -*-
 """OS Modules environ method to get the setup vars from the Environment"""
 from datetime import datetime
 from os import environ
