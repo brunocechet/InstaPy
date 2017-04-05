@@ -77,7 +77,7 @@ def like_image(browser):
 
   span_elem_text = link_elem.text
 
-  if span_elem_text == 'Like':
+  if span_elem_text == 'Like' or span_elem_text == 'Curtir':
     link_elem.click()
     print('--> Image liked!')
     sleep(2)

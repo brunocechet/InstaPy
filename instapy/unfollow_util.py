@@ -38,7 +38,7 @@ def follow_user(browser, user_name, follow_restrict):
   follow_button = browser.find_elements_by_tag_name('button')[0]
   sleep(2)
 
-  if follow_button.text == 'Follow':
+  if follow_button.text == 'Follow' or follow_button.text == 'Seguir':
     follow_button.click()
     print('--> Now following')
 
