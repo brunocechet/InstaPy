@@ -1,6 +1,4 @@
-#!/bin/sh
 # -*- coding: utf-8 -*-
-
 """Module which handles the commenting features"""
 from random import choice
 from time import sleep

@@ -1,4 +1,3 @@
-#!/bin/sh
 # -*- coding: utf-8 -*-
 """Module that handles the like features"""
 from math import ceil
@@ -50,7 +49,7 @@ def check_link(browser, link, dont_like, ignore_if_contains, username):
 
   sleep(2)
 
-  user_div = browser.find_element_by_class_name('_nk46a')
+  user_div = browser.find_element_by_xpath("//article/div[2]/div[1]/ul[1]/li[1]")
   user_name = user_div.find_element_by_tag_name('a').text
   image_text = user_div.find_element_by_tag_name('span').text
 
@@ -70,29 +69,27 @@ def check_link(browser, link, dont_like, ignore_if_contains, username):
 
 def like_image(browser):
   """Likes the browser opened image"""
-  a_elems = browser.find_elements_by_xpath('//a[@role = "button"]')
+  like_elem = browser.find_elements_by_xpath("//span[contains(@class, 'coreSpriteLikeHeartOpen')]")
+  liked_elem = browser.find_elements_by_xpath("//span[contains(@class, 'coreSpriteLikeHeartFull')]")
 
-  #handle videos
-  link_elem = a_elems[0] if len(a_elems) < 2 else a_elems[len(a_elems) - 1]
-
-  span_elem_text = link_elem.text
-
-  if span_elem_text == 'Like' or span_elem_text == 'Curtir':
-    link_elem.click()
-    print('--> Image liked!')
+  if len(like_elem) == 1:
+    like_elem[0].click()
+    print('--> Image Liked!')
     sleep(2)
     return True
-  else:
+  elif len(liked_elem) == 1:
     print('--> Already Liked!')
     return False
-
+  else:
+    print('--> Invalid Like Element!')
+    return False
 
 def get_tags(browser, url):
   """Gets all the tags of the given description in the url"""
   browser.get(url)
   sleep(1)
 
-  user_div = browser.find_element_by_class_name('_nk46a')
+  user_div = browser.find_element_by_xpath("//article/div[2]/div[1]/ul[1]/li[1]")
   image_text = user_div.find_element_by_tag_name('span').text
 
   tags = findall(r'#\w*', image_text)
